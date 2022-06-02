@@ -3,7 +3,7 @@
 A utility plugin which extends `gf` functionality in Lua files. Written in Lua
 and requires Neovim 0.8.
 
-<!-- TODO: Add GIF -->
+![nvim-lua-gf example functionality.](https://github.com/sam4llis/nvim-lua-gf/blob/main/assets/gifs/example.gif)
 
 nvim-lua-gf extends the functionality of the `gf` (go-to file) command within
 Lua files by enabling it to find 'virtual file paths' - i.e., the argument found
