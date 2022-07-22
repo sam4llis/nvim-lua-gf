@@ -71,7 +71,7 @@ end
 --   The target file path if it can be found inside the Lua or Neovim (runtime)
 --   paths. Otherwise, `nil` is returned.
 --
-local search_paths_for_file = function (fpath, ftype)
+M.search_paths_for_file = function (fpath, ftype)
   ftype = ftype or 'lua'
 
   local paths
@@ -104,39 +104,6 @@ local search_paths_for_file = function (fpath, ftype)
       return target_fpath
     end
   end
-end
-
-
---
--- @desc
---   Function (global) that searches for the virtual filepath `v_fpath` inside
---   Lua and Neovim modules.
--- @param v_fpath: string
---   The virtual filepath to be searched for. This is the argument found inside
---   `dofile() | loadfile() | require()` statements.
--- @return: string | nil
---   A real filepath as a string if `v_fpath` can be found as a Lua or Neovim
---   module. Otherwise, `nil` is returned.
---
-function _G.search_for_path(v_fpath)
-  -- Substitute all `.` characters in `v_fpath` to create a real filename path.
-  local fpath = vim.fs.normalize(string.gsub(v_fpath, '[.]', '/'))
-
-  return search_paths_for_file(fpath)
-end
-
-
---
--- @desc
---   A setup script to be invoked by the user to activate `gf` functionality in
---   Lua files.
--- @return: nil
---
-M.setup = function ()
-  -- Create parameters to go to the file in `require()` statements using `gf`.
-  vim.opt_local.path:prepend(',' .. vim.fn.stdpath('config') .. '/lua')
-  vim.opt_local.include = [=[\v<((do|load)file|require)\s*\(?['"]\zs[^'"]+\ze['"]]=]
-  vim.opt_local.includeexpr = 'v:lua.search_for_path(v:fname)'
 end
 
 return M

@@ -39,9 +39,9 @@ will display the same error messages as the regular `gf` command.
 
 ## Usage
 
-nvim-lua-gf can be initialised using the following command within an
-`after/ftplugin/lua.{lua, vim}` file.
+There is no setup for `nvim-lua-gf` to work. Simply install the plugin using
+your favourite package manager and pressing `gf` inside `path.separated.by.dots`
+statements will be opened if they can be found.
 
-```
-require('nvim-lua-gf').setup()
-```
+`nvim-lua-gf` natively works inside `.lua` and `.vim` (i.e., inside lua <<EOF
+... EOF syntax) files without any additional setup in your Neovim configuration.
