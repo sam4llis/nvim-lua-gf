@@ -39,9 +39,10 @@ will display the same error messages as the regular `gf` command.
 
 ## Usage
 
-There is no setup for `nvim-lua-gf` to work. Simply install the plugin using
-your favourite package manager and pressing `gf` inside `path.separated.by.dots`
-statements will be opened if they can be found.
+There is no setup required for `nvim-lua-gf` to work. Simply install the plugin
+using your favourite package manager and pressing `gf` inside a
+`path.separated.by.dots` will go to the file if it can be found.
 
-`nvim-lua-gf` natively works inside `.lua` and `.vim` (i.e., inside lua <<EOF
-... EOF syntax) files without any additional setup in your Neovim configuration.
+`nvim-lua-gf` natively works inside `*.lua` and `*.vim` files (i.e., Lua
+statements found inside Lua `heredoc` syntax) without any additional setup in
+your Neovim configuration.
