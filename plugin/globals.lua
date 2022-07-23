@@ -9,7 +9,7 @@
 --   A real filepath as a string if `v_fpath` can be found as a Lua or Neovim
 --   module. Otherwise, `nil` is returned.
 --
-function _G.nvim_lua_gf_search(v_fpath)
+function _G.Lua_GF_Search(v_fpath)
   local fpath = vim.fs.normalize(string.gsub(v_fpath, '[.]', '/'))
   return require('nvim-lua-gf').search_paths_for_file(fpath)
 end
