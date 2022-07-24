@@ -1,7 +1,7 @@
 # nvim-lua-gf
 
 A utility plugin which extends `gf` functionality in Lua files. Written in Lua
-and requires Neovim 0.8.
+and requires Neovim v0.7.0.
 
 ![nvim-lua-gf example functionality.](https://github.com/sam4llis/nvim-lua-gf/blob/main/assets/gifs/example.gif)
 

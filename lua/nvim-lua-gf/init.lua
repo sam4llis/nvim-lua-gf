@@ -1,9 +1,3 @@
-if vim.fn.has('nvim-0.8.0') ~= 1 then
-  vim.api.nvim_err_writeln('The Lua `gf` mapping requires Neovim 0.8.0.')
-  vim.api.nvim_err_writeln('Please update your Neovim.')
-  return
-end
-
 local M = {}
 
 --
